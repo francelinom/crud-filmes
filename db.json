@@ -109,6 +109,16 @@
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura",
       "id": 11
+    },
+    {
+      "titulo": "Homem Aranha",
+      "urlFoto": null,
+      "dtLancamento": "2022-08-15T03:00:00.000Z",
+      "descricao": "filme",
+      "nota": 5,
+      "urlIMDb": null,
+      "genero": "Aventura",
+      "id": 12
     }
   ]
 }

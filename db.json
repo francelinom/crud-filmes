@@ -149,6 +149,36 @@
       "urlIMDb": "testestestestestestestestestestestes",
       "genero": "Terror",
       "id": 15
+    },
+    {
+      "titulo": "testes",
+      "urlFoto": "",
+      "dtLancamento": "2022-08-16T03:00:00.000Z",
+      "descricao": "",
+      "nota": 5,
+      "urlIMDb": "",
+      "genero": "Comédia",
+      "id": 16
+    },
+    {
+      "titulo": "treste",
+      "urlFoto": null,
+      "dtLancamento": "2022-08-16T03:00:00.000Z",
+      "descricao": null,
+      "nota": 5,
+      "urlIMDb": null,
+      "genero": "Ficção Cientifica",
+      "id": 17
+    },
+    {
+      "titulo": "dfgdfgdfg",
+      "urlFoto": "",
+      "dtLancamento": "2022-08-16T03:00:00.000Z",
+      "descricao": "",
+      "nota": 5,
+      "urlIMDb": "",
+      "genero": "Ficção Cientifica",
+      "id": 18
     }
   ]
 }

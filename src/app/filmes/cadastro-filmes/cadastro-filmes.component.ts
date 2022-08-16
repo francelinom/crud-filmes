@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialog } from "@angular/material";
+import { Router } from "@angular/router";
 import { FilmesService } from "src/app/core/filmes.service";
 import { AlertaComponent } from "src/app/shared/components/alerta/alerta.component";
 import { ValidarCamposService } from "src/app/shared/components/campos/validar-campos.service";
@@ -19,6 +20,7 @@ export class CadastroFilmesComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private filmesService: FilmesService,
+    private router: Router,
     public validacao: ValidarCamposService,
     public dialog: MatDialog
   ) {}
@@ -63,7 +65,6 @@ export class CadastroFilmesComponent implements OnInit {
 
     const filme = this.cadastro.getRawValue() as Filme;
     this.salvar(filme);
-    this.reiniciarForm();
   }
 
   reiniciarForm(): void {
@@ -82,9 +83,25 @@ export class CadastroFilmesComponent implements OnInit {
           } as Alerta,
         };
         const dialogRef = this.dialog.open(AlertaComponent, config);
+        dialogRef.afterClosed().subscribe((opcao: boolean) => {
+          if (opcao) {
+            this.router.navigateByUrl("filmes");
+          } else {
+            this.reiniciarForm();
+          }
+        });
       },
       () => {
-        alert("Error ao salvar...");
+        const config = {
+          data: {
+            titulo: "Erro ao salvar o registro!",
+            descricao:
+              "Não conseguimos salvar o seu registro, por favor tentar novamente mais tarde!",
+            btnSucesso: "Fechar",
+            corBtnSucesso: "warn",
+          } as Alerta,
+        };
+        this.dialog.open(AlertaComponent, config);
       }
     );
   }

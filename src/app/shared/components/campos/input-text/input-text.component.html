@@ -10,10 +10,12 @@
       >Campo obrigatório</mat-error
     >
     <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'minlength')"
-      >Campo precisa ter no mínimo 2 caracteres</mat-error
+      >Campo precisa ter no mínimo
+      {{ validacao.lengthValidar(formControl, "minlength") }}</mat-error
     >
     <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'maxlength')"
-      >Campo não pode ter mais de 256 caracteres</mat-error
+      >Campo não pode ter mais de
+      {{ validacao.lengthValidar(formControl, "minlength") }}</mat-error
     >
   </mat-form-field>
 </div>

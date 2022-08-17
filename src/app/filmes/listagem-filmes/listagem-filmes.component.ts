@@ -14,6 +14,8 @@ export class ListagemFilmesComponent implements OnInit {
   pagina = 0;
   readonly qtdPagina = 4;
   generos: Array<string>;
+  texto = "";
+  genero = "";
 
   constructor(private filmesService: FilmesService, private fb: FormBuilder) {}
 
@@ -22,6 +24,17 @@ export class ListagemFilmesComponent implements OnInit {
       texto: [""],
       genero: [""],
     });
+
+    this.filtrosListagem.get("texto").valueChanges.subscribe((val: string) => {
+      this.texto = val;
+      this.resetarConsulta();
+    });
+
+    this.filtrosListagem.get("genero").valueChanges.subscribe((val: string) => {
+      this.genero = val;
+      this.resetarConsulta();
+    });
+
     this.generos = [
       "Ação",
       "Romance",
@@ -43,9 +56,15 @@ export class ListagemFilmesComponent implements OnInit {
   private listarFilmes(): void {
     this.pagina++;
     this.filmesService
-      .listar(this.pagina, this.qtdPagina)
+      .listar(this.pagina, this.qtdPagina, this.texto, this.genero)
       .subscribe((filmes: Filme[]) => {
         this.filmes.push(...filmes);
       });
+  }
+
+  private resetarConsulta(): void {
+    this.pagina = 0;
+    this.filmes = [];
+    this.listarFilmes();
   }
 }

@@ -171,96 +171,6 @@
       "id": 17
     },
     {
-      "titulo": "dfgdfgdfg",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 5,
-      "urlIMDb": "",
-      "genero": "Ficção Cientifica",
-      "id": 18
-    },
-    {
-      "titulo": "testes",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 5,
-      "urlIMDb": "",
-      "genero": "Romance",
-      "id": 19
-    },
-    {
-      "titulo": "xvcv",
-      "urlFoto": null,
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": null,
-      "nota": 5,
-      "urlIMDb": null,
-      "genero": "Aventura",
-      "id": 20
-    },
-    {
-      "titulo": "sfvxfcv",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Aventura",
-      "id": 21
-    },
-    {
-      "titulo": "sgffdgfdsg",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Romance",
-      "id": 22
-    },
-    {
-      "titulo": "fdfdsf",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Romance",
-      "id": 23
-    },
-    {
-      "titulo": "fdsf",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Romance",
-      "id": 24
-    },
-    {
-      "titulo": "svvv",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Aventura",
-      "id": 25
-    },
-    {
-      "titulo": "cxzvcvxv",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Romance",
-      "id": 26
-    },
-    {
       "titulo": "O cardápio",
       "urlFoto": "https://br.web.img3.acsta.net/c_310_420/pictures/22/08/10/16/10/4941013.jpg",
       "dtLancamento": "2022-08-16T03:00:00.000Z",
@@ -269,16 +179,6 @@
       "urlIMDb": "https://www.imdb.com/title/tt9764362/?ref_=vp_vi_tt",
       "genero": "Terror",
       "id": 27
-    },
-    {
-      "titulo": "teste quebrar linha",
-      "urlFoto": "",
-      "dtLancamento": "2022-08-18T03:00:00.000Z",
-      "descricao": "quebrar-linha\nquebrar-linha\nquebrar-linha\nquebrar-linha",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Romance",
-      "id": 28
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialog } from "@angular/material";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { FilmesService } from "src/app/core/filmes.service";
 import { AlertaComponent } from "src/app/shared/components/alerta/alerta.component";
 import { ValidarCamposService } from "src/app/shared/components/campos/validar-campos.service";
@@ -14,6 +14,7 @@ import { Filme } from "src/app/shared/models/filme";
   styleUrls: ["./cadastro-filmes.component.scss"],
 })
 export class CadastroFilmesComponent implements OnInit {
+  id: number;
   cadastro: FormGroup;
   generos: Array<string>;
 
@@ -22,6 +23,7 @@ export class CadastroFilmesComponent implements OnInit {
     private filmesService: FilmesService,
     private router: Router,
     public validacao: ValidarCamposService,
+    private activatedRoute: ActivatedRoute,
     public dialog: MatDialog
   ) {}
 
@@ -30,22 +32,15 @@ export class CadastroFilmesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cadastro = this.fb.group({
-      titulo: [
-        "",
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(256),
-        ],
-      ],
-      urlFoto: ["", [Validators.minLength(10)]],
-      dtLancamento: ["", [Validators.required]],
-      descricao: [""],
-      nota: [0, [Validators.required, Validators.min(0), Validators.max(10)]],
-      urlIMDb: ["", [Validators.minLength(10)]],
-      genero: ["", [Validators.required]],
-    });
+    this.id = this.activatedRoute.snapshot.params["id"];
+    if (this.id) {
+      this.filmesService
+        .visulizar(this.id)
+        .subscribe((filme: Filme) => this.criarFormulario(filme));
+    } else {
+      this.criarFormulario(this.criarFilmeEmBranco());
+    }
+
     this.generos = [
       "Ação",
       "Romance",
@@ -69,6 +64,41 @@ export class CadastroFilmesComponent implements OnInit {
 
   reiniciarForm(): void {
     this.cadastro.reset();
+  }
+
+  private criarFilmeEmBranco(): Filme {
+    return {
+      id: null,
+      titulo: null,
+      dtLancamento: null,
+      urlFoto: null,
+      descricao: null,
+      nota: null,
+      urlImdb: null,
+      genero: null,
+    } as Filme;
+  }
+
+  private criarFormulario(filme: Filme): void {
+    this.cadastro = this.fb.group({
+      titulo: [
+        filme.titulo,
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(256),
+        ],
+      ],
+      urlFoto: [filme.urlFoto, [Validators.minLength(10)]],
+      dtLancamento: [filme.dtLancamento, [Validators.required]],
+      descricao: [filme.descricao],
+      nota: [
+        filme.nota,
+        [Validators.required, Validators.min(0), Validators.max(10)],
+      ],
+      urlIMDb: [filme.urlIMDb, [Validators.minLength(10)]],
+      genero: [filme.genero, [Validators.required]],
+    });
   }
 
   private salvar(filme: Filme): void {

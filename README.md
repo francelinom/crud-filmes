@@ -1,28 +1,78 @@
-# Curso Intermediário de Angular - Digital Innovation One
+# crud-filmes
 
-Esse curso foi feito para a plataforma [Digital Innovation One](https://digitalinnovation.one/)
 
-O curso consiste em um sistema de filmes, com a possibilidade de cadastros, edições, listagem e visualização dos filmes.
+## Indice
 
-## Instalação
+- [crud-filmes](#crud-filmes)
+  - [Indice](#indice)
+  - [Sobre](#sobre)
+  - [Funcionalidade da Aplicação](#funcionalidade-da-aplicação)
+  - [Tecnologias utilizadas](#tecnologias-utilizadas)
+  - [Como baixar o projeto](#como-baixar-o-projeto)
+  - [Telas](#telas)
+  - [Autor](#autor)
+  
+---
 
-1. clone o repositório `git clone git@github.com:RenanRB/curso-angular.git`
-2. Entre no projeto e instale as dependencias `npm install`
-3. Caso você queira alguma aula específica lembre que voce pode pegar direto das nossas release fazendo download do zip ou clonando a partir do commit hash, URL: https://github.com/RenanRB/curso-angular/tags
+## Sobre
 
-## Ambiente Local
+O Projeto **crud-filmes** foi desenvolvido para estudo para criar um CRUD e pesquisa por nome e gênero de uma aplicação de filmes em Angular 8. Utilizando algumas técnicas avançadas que o angular disponibiliza.
 
-Execute `ng serve` para que o projeto suba localmente. Acesse a url `http://localhost:4200/`. O projeto já está com reload automático conforme as alterações que você realizar no código
+---
 
-## Simulando o Back-end
+## Funcionalidade da Aplicação
 
-Execute `npm install -g json-server` para instalar globalmente o servidor json. Após a instalação entre na pasta do projeto e execute `json-server --watch db.json`, com isso um servidor será inicializado na url `http://localhost:3000/`, após a inicialização sera possível realizar requisições http.
+As funcionalidades são:
+- Criar Filme;
+- Listar Filme;
+- Editar Filme;
+- Excluir Filme.
+- Pesquisar Filme por nome e gênero
 
-## Gerando componente
+---
+## Tecnologias utilizadas 
 
-Execute `ng generate component nome-do-componente` para criar um novo componente. Você também pode usuar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+O projeto foi desenvolvido utilizando as seguintes tecnologias
+- Angular 8
+- TypeScript
+- ngx-infinite-scroll
+- CSS
+- HTML
 
-## Build
+---
 
-Execute `ng build` para gerar o compilado do projeto. O projeto vai ser criado dentro do diretório `dist/`. Adicionar `--prod` junto comando de build para gerar minificado e pronto para o ambiente de produção.
+## Como baixar o projeto
 
+```bash
+# Clonar o repositório em sua máquina 
+$ git clone https://github.com/francelinom/crud-filmes.git
+
+# Entrar na pasta do projeto 
+$ cd crud-filmes
+
+# Instalar todas as dependências 
+$ npm i
+
+# Iniciar o projeto 
+ng serve
+# or
+yarn dev
+
+Abrir o projeto na porta: http://localhost:4200
+```
+
+---
+## Telas
+<img src="src/assets/images/imagem01.png">
+
+<img src="src/assets/images/imagem02.png">
+
+<img src="src/assets/images/imagem03.png">
+
+---
+## Autor
+
+Desenvolvido por **Francelino Marcílio da Silva** 
+<h1>
+  <img src="src/assets/images/eumesmo.jpg">
+</h1>
